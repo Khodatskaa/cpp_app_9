@@ -20,26 +20,26 @@ int main()
 	cout << "Enter second number: ";
 	cin >> num2;
 
-	double* ptr1 = &num1;
-	double* ptr2 = &num2;
+	double *x = &num1;
+	double *y = &num2;
 
 	switch (choice)
 	{
 		case 1:
-			res = *ptr1 + *ptr2;
-			cout << "Result: " << *ptr1 << " + " << *ptr2 << " = " << res << endl;
+			res = *x + *y;
+			cout << "Result: " << *x << " + " << *y << " = " << res << endl;
 			break;
 		case 2:
-			res = *ptr1 - *ptr2;
-			cout << "Result: " << *ptr1 << " - " << *ptr2 << " = " << res << endl;
+			res = *x - *y;
+			cout << "Result: " << *x << " - " << *y << " = " << res << endl;
 			break;
 		case 3:
-			res = *ptr1 * *ptr2;
-			cout << "Result: " << *ptr1 << " * " << *ptr2 << " = " << res << endl;
+			res = *x * *y;
+			cout << "Result: " << *x << " * " << *y << " = " << res << endl;
 			break;
 		case 4:
-			res = *ptr1 / *ptr2;
-			cout << "Result: " << *ptr1 << " / " << *ptr2 << " = " << res << endl;
+			res = *x / *y;
+			cout << "Result: " << *x << " / " << *y << " = " << res << endl;
 			break;
 
 			default:
