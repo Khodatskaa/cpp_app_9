@@ -1,38 +1,39 @@
 #include <iostream>
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 int main() 
 {
-    const int size = 5;  
-    int arr[size];  
+    const int n = 5;
+    int arr[n];
 
     srand(static_cast<unsigned>(time(0)));
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < n; i++) 
     {
-        arr[i] = rand() % 100;  
+        arr[i] = rand() % 100;
     }
 
+    int* x = arr;
+
     cout << "Original array: ";
-    for (int i = 0; i < size; i++) 
+    for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
     cout << endl;
 
-    
-    for (int i = 0; i < size / 2; i++) 
+    for (int i = 0; i < n / 2; i++)
     {
-        int temp = arr[i];
-        arr[i] = arr[size - 1 - i];
-        arr[size - 1 - i] = temp;
+        *(x + i) = *(x + i) + *(x + n - 1 - i);
+        *(x + n - 1 - i) = *(x + i) - *(x + n - 1 - i);
+        *(x + i) = *(x + i) - *(x + n - 1 - i);
     }
 
     cout << "Reversed array: ";
-    for (int i = 0; i < size; i++) 
+    for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
