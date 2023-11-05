@@ -12,12 +12,12 @@ int main()
 	cout << "Enter second number: ";
 	cin >> num2;
 
-	int* ptr1 = &num1;
-	int* ptr2 = &num2;
+	int *x = &num1;
+	int *y = &num2;
 
-	if (*ptr1 > *ptr2)
+	if (*x > *y)
 		cout << "First number is greater than second " << endl;
-	else if (*ptr1 < *ptr2)
+	else if (*x < *y)
 		cout << "Second number is greater than first " << endl;
 	else
 		cout << "Numbers are equal" << endl;
