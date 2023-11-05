@@ -1,34 +1,38 @@
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
+#include <cstdlib> 
+#include <ctime>   
 
 using namespace std;
 
-int main()
+int main() 
 {
-	const int size = 5;
-	int arr[size];
-	int sum = 0;
+    const int n = 5; 
+    int arr[n];      
 
-	srand(static_cast<unsigned int>(time(0)));
+    srand(static_cast<unsigned>(time(nullptr)));
 
-	for (int i = 0; i < size; i++)
-	{
-		arr[i] = rand() % 100;
-	}
-	for (int i = 0; i < size; i++)
-	{
-		sum += arr[i];
-	}
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = rand() % 100; 
+    }
 
-	cout << "Array elements: ";
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;
+    int sum = 0;
+    int *x = arr; 
 
-	cout << "Sum of array elements: " << sum << endl;
+    for (int i = 0; i < n; i++) 
+    {
+        sum += *x; 
+        x++;       
+    }
 
-	return 0;
+    cout << "Array: ";
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    cout << "The sum of numbers in the array is: " << sum << endl;
+
+    return 0;
 }
